@@ -1,0 +1,279 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// **************************** CUSTOM BOOTSTRAP ***************************** //
+$bgDefault      : #e74c3c;
+$bgHighlight    : #c0392b;
+$colDefault     : #ecf0f1;
+$colHighlight   : #f0dddd;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+// ************************************ CUSTOM BOOTSTRAP *******************************/
+
+// ************************************ LOGIN PAGE *************************************/
+
+button.btn {
+  background: $bgDefault;
+  border-color: $bgDefault;
+  &:hover, &:active, &:target, &:focus {
+    background: darken($bgDefault, 5%)!important;
+    border-color: $bgDefault!important;
+  }
+}
+
+.login, .register {
+  margin-top: 300px;
+}
+
+// ************************************ HOME PAGE - QUOTES ******************************/
+
+.home {
+  .latest {
+    margin-bottom: 15px;
+    h4.header {
+      margin-left: 30px;
+      font-weight: 700
+    }
+  }
+  .popular {
+    h4.header {
+      margin-left: 30px;
+      font-weight: 700
+    }
+  }
+  .categories {
+    text-align: center;
+    ul {
+      display: none;
+      margin-bottom: 30px;
+    }
+    ul li {
+      margin: 0 5px;
+    }
+    ul > li > a {
+      color: $bgDefault;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    a.toggle-categories {
+      color: $bgDefault;
+      font-weight: 700;
+      font-size: 1.7rem;
+      display: block;
+      margin: 10px 0 15px 0;
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.quote {
+  background-color: #ededed;
+  height: 155px;
+  width: 100%;
+  margin: 10px;
+  //border: 0.5px solid rgba(63,63,63,0.5);
+  border-radius: 2px;
+  position: relative;
+  box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.25);
+  &:hover {
+    background-color: lighten(#ededed, 3.2%);
+    cursor: pointer; cursor: hand;
+  }
+  a.quote-content {
+    display: block;
+    padding: 12px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #2a2a2a;
+  }
+  .desc {
+    padding: 10px 10px 5px 10px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    background: lighten(#2a2a2a, 2%);
+    color: #e4e4e4;
+    width: 100%;
+    height: 50px;
+    .likes {
+      float: right;
+      button.like-link {
+        //display: block;
+        margin-top: -5px;
+        color: $bgDefault;
+        &:active, &:focus {
+          background: red;
+          background: none;
+          outline: 0;
+          box-shadow: none;
+        }
+      }
+    }
+    .timestamp {
+      position: absolute;
+      bottom: 0;
+      right: 5px;
+      font-size: 1.1rem;
+    }
+    .quote-author a {
+      color: $bgDefault;
+      font-weight: 700;
+    }
+  }
+}
+
+.show-quote {
+  .quote {
+    margin-left: -25px;
+  }
+  .back {
+    display: block;
+    margin: 60px 0 auto;
+    text-align: center;
+    a {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: $bgDefault;
+      text-decoration: underline;
+    }
+  }
+}
+button.like-link {
+
+}
+
+.navbar {
+  margin-bottom: 50px;
+}
+
+a.active {
+  background: $bgDefault;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 5px;
+  padding: 5px 3px;
+  pointer-events: none;
+  cursor: default;
+}
+
+.borderless td, .borderless th {
+  border: none !important;
+  text-align: center;
+}
+
+.borderless td.count {
+  text-align: center;
+}
+
+ul.pagination {
+  li a {
+    background: lighten(#2a2a2a, 2%);
+    color: white;
+    border-color: lighten(#2a2a2a, 2%);
+    &:hover {
+      border-color: $bgHighlight;
+      color: white;
+      background-color: $bgHighlight;
+    }
+  }
+  li.active span{
+    background: $bgDefault;
+    border-color: $bgDefault;
+    &:hover {
+      background: $bgDefault;
+      border-color: $bgDefault;
+    }
+  }
+  li.disabled span {
+    background: lighten(#2a2a2a, 5%);
+    color: gray;
+    border-color: lighten(#2a2a2a, 5%);
+    &:hover {
+      background: lighten(#2a2a2a, 5%);
+      color: gray;
+      border-color: lighten(#2a2a2a, 5%);
+    }
+  }
+}
+
+.quote-cat-list {
+  margin-bottom: 50px;
+  h4 {
+    text-align: center;
+  }
+  a {
+    color: $bgDefault;
+    text-decoration: underline;
+  }
+}
